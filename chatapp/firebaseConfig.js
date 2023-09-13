@@ -2,6 +2,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import Constants from 'expo-constants'
+import { getFirestore } from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBk-qINpI6XiNABTe_wbKfZykvQdvUWWlk",
@@ -12,6 +14,9 @@ const firebaseConfig = {
   appId: "1:194340734719:web:7e54196b990c5d56932eca",
 };
 
-const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth(app);
+export const storage = getStorage();
+export const db = getFirestore();

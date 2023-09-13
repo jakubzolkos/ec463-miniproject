@@ -5,15 +5,20 @@ import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
 
+import Sidebar from '../components/Sidebar'
+import Chat from '../components/Chat'
+
 export default function Dashboard({ navigation }) {
+  /*
   return (
     <Background>
       <Logo />
       <Header>Let’s start</Header>
+      
       <Paragraph>
-        Your amazing app starts here. Open you favorite code editor and start
-        editing this project.
+        Login successful
       </Paragraph>
+
       <Button
         mode="outlined"
         onPress={() =>
@@ -27,4 +32,17 @@ export default function Dashboard({ navigation }) {
       </Button>
     </Background>
   )
+  */
+  
+  
+  return (
+    <div className='home'>
+      <div className="container">
+        <Sidebar/>
+        <Chat />
+      </div>
+      
+    </div>
+  )
+  
 }
