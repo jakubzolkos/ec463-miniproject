@@ -11,6 +11,11 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+import {SocialIcon} from "react-native-elements";
+import * as Google from "expo-auth-session/providers/google";
+import {GoogleAuthProvider, onAuthStateChanged, signInWithCredential} from "firebase/auth";
+import {auth} from "../../firebaseConfig";
+import {Dashboard} from "./index";
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
@@ -33,7 +38,37 @@ export default function RegisterScreen({ navigation }) {
     })
   }
 
-  return (
+  const [userInfo, setUserInfo] = useState();
+  const [request, response, promptAsync] = Google.useAuthRequest({
+      responseType: "id_token",
+      webClientId: "194340734719-f8itgbip10m9n67b1upsh1vt7bef3869.apps.googleusercontent.com",
+      iosClientId: "194340734719-3hvuk7trb57l1l8obsjvrfhfl2s4ll8t.apps.googleusercontent.com",
+      androidClientId: "194340734719-gvq5c6b1usetpb29ot31pvqlmpkj4l5d.apps.googleusercontent.com",
+  });
+
+  React.useEffect(() => {
+      if (response?.type === "success") {
+          const { id_token } = response.params;
+          const credential = GoogleAuthProvider.credential(id_token);
+          signInWithCredential(auth, credential).then(r => {});
+          console.log(response.params)
+      }
+  }, [response])
+
+  React.useEffect(() => {
+      const unsub = onAuthStateChanged(auth, async (user) => {
+          if (user) {
+            console.log(JSON.stringify(user, null, 2));
+            setUserInfo(user);
+          } else {
+              console.log("User not authorized");
+          }
+      });
+
+      return () => unsub();
+  }, []);
+
+  return userInfo ? <Dashboard/> : (
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
@@ -80,6 +115,23 @@ export default function RegisterScreen({ navigation }) {
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
+      <SocialIcon
+          button
+          fontStyle={{}}
+          iconSize={20}
+          iconStyle={{}}
+          iconType="font-awesome"
+          onLongPress={() => console.log("onLongPress()")}
+          onPress={() => promptAsync()}
+          style={{
+              width: '100%',
+              marginVertical: 50,
+              borderRadius: 20,
+              shadowOpacity: 0,
+          }}
+          title="Sign Up with Google"
+          type="google"
+      />
     </Background>
   )
 }

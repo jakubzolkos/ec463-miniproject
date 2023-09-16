@@ -15,14 +15,14 @@ import * as WebBrowser from 'expo-web-browser'
 import {
     GoogleAuthProvider,
     onAuthStateChanged,
-    signInWithCredential
+    signInWithCredential,
 } from 'firebase/auth'
 import { auth } from "../../firebaseConfig"
 import {Dashboard} from "./index";
 
 WebBrowser.maybeCompleteAuthSession()
 
-export default function LoginScreen({ navigation }) {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
@@ -32,12 +32,7 @@ export default function LoginScreen({ navigation }) {
     if (emailError || passwordError) {
       setEmail({ ...email, error: emailError })
       setPassword({ ...password, error: passwordError })
-      return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
   }
 
   const [userInfo, setUserInfo] = useState();
@@ -70,7 +65,8 @@ export default function LoginScreen({ navigation }) {
       return () => unsub();
   }, []);
 
-  return userInfo ? <Dashboard/> : (
+  return userInfo ?
+    navigation.navigate("HomeScreen") : (
     <Background promptAsync={promptAsync}>
       <BackButton goBack={navigation.goBack} />
       <Logo />
@@ -126,7 +122,7 @@ export default function LoginScreen({ navigation }) {
               borderRadius: 20,
               shadowOpacity: 0,
           }}
-          title="Sign Up with Google"
+          title="Login with Google"
           type="google"
       />
     </Background>
@@ -152,3 +148,5 @@ const styles = StyleSheet.create({
     color: theme.colors.primary,
   },
 })
+
+export default LoginScreen
