@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.chatter.app-mergeDebugResources-48:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/hyron/.gradle/caches/transforms-3/95f43e67258b6255d5f905e05c7f2458/transformed/appcompat-1.4.1/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

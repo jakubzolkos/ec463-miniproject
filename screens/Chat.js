@@ -1,6 +1,5 @@
 import React, {
     useState,
-    useEffect,
     useLayoutEffect,
     useCallback
   } from 'react';
@@ -25,7 +24,7 @@ import React, {
     const [messages, setMessages] = useState([]);
     const navigation = useNavigation();
 
-  const onSignOut = () => {
+    const onSignOut = () => {
       signOut(auth).catch(error => console.log('Error logging out: ', error));
     };
 
@@ -46,8 +45,8 @@ import React, {
 
     useLayoutEffect(() => {
 
-        const collectionRef = collection(database, 'chats');
-        const q = query(collectionRef, orderBy('createdAt', 'desc'));
+    const collectionRef = collection(database, 'chats');
+    const q = query(collectionRef, orderBy('createdAt', 'desc'));
 
     const unsubscribe = onSnapshot(q, querySnapshot => {
         console.log('querySnapshot unsusbscribe');
@@ -78,14 +77,9 @@ import React, {
       }, []);
 
       return (
-        // <>
-        //   {messages.map(message => (
-        //     <Text key={message._id}>{message.text}</Text>
-        //   ))}
-        // </>
         <GiftedChat
           messages={messages}
-          showAvatarForEveryMessage={false}
+          showAvatarForEveryMessage={true}
           showUserAvatar={false}
           onSend={messages => onSend(messages)}
           messagesContainerStyle={{

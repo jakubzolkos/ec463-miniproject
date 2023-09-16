@@ -1,0 +1,381 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.chatter"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:4:3-75
+11-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:4:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:2:3-64
+12-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:2:20-62
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:3:3-77
+13-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:3:20-75
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:5:3-63
+14-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:5:20-61
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:6:3-78
+15-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:6:20-76
+16
+17    <queries>
+17-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:7:3-13:13
+18        <intent>
+18-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:8:5-12:14
+19            <action android:name="android.intent.action.VIEW" />
+19-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:7-58
+19-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:15-56
+20
+21            <category android:name="android.intent.category.BROWSABLE" />
+21-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:7-67
+21-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:17-65
+22
+23            <data android:scheme="https" />
+23-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:7-37
+23-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:13-35
+24        </intent>
+25
+26        <package android:name="host.exp.exponent" /> <!-- Query open documents -->
+26-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-53
+26-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:18-50
+27        <intent>
+27-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-17:18
+28            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+28-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-79
+28-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:21-76
+29        </intent>
+30        <intent>
+30-->[:expo-web-browser] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:18
+31
+32            <!-- Required for opening tabs if targeting API 30 -->
+33            <action android:name="android.support.customtabs.action.CustomTabsService" />
+33-->[:expo-web-browser] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-90
+33-->[:expo-web-browser] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-web-browser/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-87
+34        </intent>
+35    </queries>
+36
+37    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+37-->[com.facebook.flipper:flipper:0.182.0] /home/hyron/.gradle/caches/transforms-3/96aa0437b2be82ab10ada7819631979e/transformed/jetified-flipper-0.182.0/AndroidManifest.xml:16:5-76
+37-->[com.facebook.flipper:flipper:0.182.0] /home/hyron/.gradle/caches/transforms-3/96aa0437b2be82ab10ada7819631979e/transformed/jetified-flipper-0.182.0/AndroidManifest.xml:16:22-73
+38    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+38-->[com.android.installreferrer:installreferrer:1.0] /home/hyron/.gradle/caches/transforms-3/b409db4384a0381f9fd765eb02608aad/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+38-->[com.android.installreferrer:installreferrer:1.0] /home/hyron/.gradle/caches/transforms-3/b409db4384a0381f9fd765eb02608aad/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+39
+40    <application
+40-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:3-33:17
+41        android:name="com.chatter.MainApplication"
+41-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:16-47
+42        android:allowBackup="true"
+42-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:162-188
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.8.0] /home/hyron/.gradle/caches/transforms-3/556fca5d2dde0d1dc2f6fa1e439c5f2d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+44        android:debuggable="true"
+45        android:icon="@mipmap/ic_launcher"
+45-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:81-115
+46        android:label="@string/app_name"
+46-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:48-80
+47        android:roundIcon="@mipmap/ic_launcher_round"
+47-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:116-161
+48        android:theme="@style/AppTheme"
+48-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:14:189-220
+49        android:usesCleartextTraffic="true" >
+49-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/debug/AndroidManifest.xml:6:18-53
+50        <meta-data
+50-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:15:5-83
+51            android:name="expo.modules.updates.ENABLED"
+51-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:15:16-59
+52            android:value="false" />
+52-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:15:60-81
+53        <meta-data
+53-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:16:5-93
+54            android:name="expo.modules.updates.EXPO_SDK_VERSION"
+54-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:16:16-68
+55            android:value="49.0.0" />
+55-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:16:69-91
+56        <meta-data
+56-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:17:5-105
+57            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+57-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:17:16-80
+58            android:value="ALWAYS" />
+58-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:17:81-103
+59        <meta-data
+59-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:18:5-99
+60            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+60-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:18:16-79
+61            android:value="0" />
+61-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:18:80-97
+62
+63        <activity
+63-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:5-31:16
+64            android:name="com.chatter.MainActivity"
+64-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:15-43
+65            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+65-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:77-154
+66            android:exported="true"
+66-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:276-299
+67            android:label="@string/app_name"
+67-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:44-76
+68            android:launchMode="singleTask"
+68-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:155-186
+69            android:screenOrientation="portrait"
+69-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:300-336
+70            android:theme="@style/Theme.App.SplashScreen"
+70-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:230-275
+71            android:windowSoftInputMode="adjustResize" >
+71-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:19:187-229
+72            <intent-filter>
+72-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:20:7-23:23
+73                <action android:name="android.intent.action.MAIN" />
+73-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:21:9-60
+73-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:21:17-58
+74
+75                <category android:name="android.intent.category.LAUNCHER" />
+75-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:22:9-68
+75-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:22:19-66
+76            </intent-filter>
+77            <intent-filter>
+77-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:24:7-30:23
+78                <action android:name="android.intent.action.VIEW" />
+78-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:7-58
+78-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:15-56
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:9-67
+80-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:19-65
+81                <category android:name="android.intent.category.BROWSABLE" />
+81-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:7-67
+81-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:17-65
+82
+83                <data android:scheme="com.chatter" />
+83-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:7-37
+83-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:13-35
+84                <data android:scheme="exp+chatapp" />
+84-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:7-37
+84-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:13-35
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:32:5-106
+88            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+88-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:32:15-79
+89            android:exported="false" />
+89-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:32:80-104
+90
+91        <meta-data
+91-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-14:37
+92            android:name="expo.modules.updates.AUTO_SETUP"
+92-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-59
+93            android:value="false" />
+93-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-34
+94
+95        <activity
+95-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-29:20
+96            android:name="expo.modules.devlauncher.launcher.DevLauncherActivity"
+96-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-81
+97            android:exported="true"
+97-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-36
+98            android:launchMode="singleTask"
+98-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-44
+99            android:theme="@style/Theme.DevLauncher.LauncherActivity" >
+99-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-70
+100            <intent-filter>
+100-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-28:29
+101                <action android:name="android.intent.action.VIEW" />
+101-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:7-58
+101-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:15-56
+102
+103                <category android:name="android.intent.category.DEFAULT" />
+103-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:9-67
+103-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:19-65
+104                <category android:name="android.intent.category.BROWSABLE" />
+104-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:7-67
+104-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:17-65
+105
+106                <data android:scheme="expo-dev-launcher" />
+106-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:7-37
+106-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:13-35
+107            </intent-filter>
+108        </activity>
+109        <activity
+109-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:9-33:70
+110            android:name="expo.modules.devlauncher.launcher.errors.DevLauncherErrorActivity"
+110-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-93
+111            android:screenOrientation="portrait"
+111-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-49
+112            android:theme="@style/Theme.DevLauncher.ErrorActivity" />
+112-->[:expo-dev-launcher] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-launcher/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-67
+113        <activity
+113-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-21:20
+114            android:name="expo.modules.devmenu.DevMenuActivity"
+114-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-64
+115            android:exported="true"
+115-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-36
+116            android:launchMode="singleTask"
+116-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-44
+117            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" >
+117-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-75
+118            <intent-filter>
+118-->[:expo-dev-menu] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-dev-menu/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-20:29
+119                <action android:name="android.intent.action.VIEW" />
+119-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:7-58
+119-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:9:15-56
+120
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:9-67
+121-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:26:19-65
+122                <category android:name="android.intent.category.BROWSABLE" />
+122-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:7-67
+122-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:10:17-65
+123
+124                <data android:scheme="expo-dev-menu" />
+124-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:7-37
+124-->/home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/android/app/src/main/AndroidManifest.xml:11:13-35
+125            </intent-filter>
+126        </activity>
+127
+128        <provider
+128-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:9-30:20
+129            android:name="expo.modules.filesystem.FileSystemFileProvider"
+129-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-74
+130            android:authorities="com.chatter.FileSystemFileProvider"
+130-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-74
+131            android:exported="false"
+131-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+132            android:grantUriPermissions="true" >
+132-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-47
+133            <meta-data
+133-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:70
+134                android:name="android.support.FILE_PROVIDER_PATHS"
+134-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-67
+135                android:resource="@xml/file_system_provider_paths" />
+135-->[:expo-file-system] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-file-system/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-67
+136        </provider>
+137
+138        <meta-data
+138-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-11:89
+139            android:name="org.unimodules.core.AppLoader#react-native-headless"
+139-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-79
+140            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+140-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-86
+141        <meta-data
+141-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-15:45
+142            android:name="com.facebook.soloader.enabled"
+142-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-57
+143            android:value="true" />
+143-->[:expo-modules-core] /home/hyron/PycharmProjects/miniproject/ec463-miniproject/chatapp/node_modules/expo-modules-core/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-33
+144
+145        <activity
+145-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+146            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+146-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+147            android:excludeFromRecents="true"
+147-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+148            android:exported="false"
+148-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+149            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+149-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+150        <!--
+151            Service handling Google Sign-In user revocation. For apps that do not integrate with
+152            Google Sign-In, this service will never be started.
+153        -->
+154        <service
+154-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+155            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+155-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+156            android:exported="true"
+156-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+157            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+157-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+158            android:visibleToInstantApps="true" />
+158-->[com.google.android.gms:play-services-auth:20.5.0] /home/hyron/.gradle/caches/transforms-3/f0ebd20cd28625fb487c1a38ce6cb765/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+159
+160        <activity
+160-->[com.google.android.gms:play-services-base:18.0.1] /home/hyron/.gradle/caches/transforms-3/c69dd7b5b28914fcb3ed3d6706dd59cf/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+161            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+161-->[com.google.android.gms:play-services-base:18.0.1] /home/hyron/.gradle/caches/transforms-3/c69dd7b5b28914fcb3ed3d6706dd59cf/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+162            android:exported="false"
+162-->[com.google.android.gms:play-services-base:18.0.1] /home/hyron/.gradle/caches/transforms-3/c69dd7b5b28914fcb3ed3d6706dd59cf/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+163            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+163-->[com.google.android.gms:play-services-base:18.0.1] /home/hyron/.gradle/caches/transforms-3/c69dd7b5b28914fcb3ed3d6706dd59cf/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+164
+165        <meta-data
+165-->[com.google.android.gms:play-services-basement:18.2.0] /home/hyron/.gradle/caches/transforms-3/427225c583c6420b2cedee865c215e3e/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+166            android:name="com.google.android.gms.version"
+166-->[com.google.android.gms:play-services-basement:18.2.0] /home/hyron/.gradle/caches/transforms-3/427225c583c6420b2cedee865c215e3e/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+167            android:value="@integer/google_play_services_version" />
+167-->[com.google.android.gms:play-services-basement:18.2.0] /home/hyron/.gradle/caches/transforms-3/427225c583c6420b2cedee865c215e3e/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+168
+169        <provider
+169-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+170            android:name="androidx.startup.InitializationProvider"
+170-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+171            android:authorities="com.chatter.androidx-startup"
+171-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+172            android:exported="false" >
+172-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+173            <meta-data
+173-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+174                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+174-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+175                android:value="androidx.startup" />
+175-->[androidx.emoji2:emoji2:1.0.0] /home/hyron/.gradle/caches/transforms-3/ec87351dfec97ae77a404b3887985765/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+176            <meta-data
+176-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/hyron/.gradle/caches/transforms-3/b3cb99c8228f7b004acc305315f9f395/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+177                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+177-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/hyron/.gradle/caches/transforms-3/b3cb99c8228f7b004acc305315f9f395/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+178                android:value="androidx.startup" />
+178-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/hyron/.gradle/caches/transforms-3/b3cb99c8228f7b004acc305315f9f395/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+179            <meta-data
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+180                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+181                android:value="androidx.startup" />
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+182        </provider>
+183
+184        <receiver
+184-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+185            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+186            android:directBootAware="false"
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+187            android:enabled="true"
+187-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+188            android:exported="true"
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+189            android:permission="android.permission.DUMP" >
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+190            <intent-filter>
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+191                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+192            </intent-filter>
+193            <intent-filter>
+193-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+194                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+195            </intent-filter>
+196            <intent-filter>
+196-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+197                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+197-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+197-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+198            </intent-filter>
+199            <intent-filter>
+199-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+200                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+200-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+200-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/hyron/.gradle/caches/transforms-3/cd0619271537d84f07f6b6e89c9c818c/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+201            </intent-filter>
+202        </receiver>
+203    </application>
+204
+205</manifest>

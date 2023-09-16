@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import {SocialIcon} from "react-native-elements";
 const backImage = require("../assets/backImage.png");
 
 export default function Signup({ navigation }) {
@@ -19,11 +20,18 @@ const onHandleSignup = () => {
   
   return (
     <View style={styles.container}>
-      <Image source={backImage} style={styles.backImage} />
       <View style={styles.whiteSheet} />
       <SafeAreaView style={styles.form}>
-        <Text style={styles.title}>Sign Up</Text>
-         <TextInput
+      <Text style={styles.title}>Sign Up</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter username"
+        autoCapitalize="none"
+        autoFocus={true}
+        // value={email}
+        // onChangeText={(text) => setEmail(text)}
+      />
+      <TextInput
         style={styles.input}
         placeholder="Enter email"
         autoCapitalize="none"
@@ -43,15 +51,41 @@ const onHandleSignup = () => {
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Re-enter password"
+        autoCapitalize="none"
+        autoCorrect={false}
+        secureTextEntry={true}
+        textContentType="password"
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+      />
       <TouchableOpacity style={styles.button} onPress={onHandleSignup}>
         <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Sign Up</Text>
       </TouchableOpacity>
       <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center'}}>
-        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Don't have an account? </Text>
+        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
           <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Log In</Text>
         </TouchableOpacity>
       </View>
+      <SocialIcon
+          button
+          fontStyle={{fontSize: 16, fontWeight: '600'}}
+          iconStyle={{}}
+          iconType="font-awesome"
+          onLongPress={() => console.log("onLongPress()")}
+          onPress={() => promptAsync()}
+          style={{
+              width: '100%',
+              marginVertical: 50,
+              borderRadius: 10,
+              shadowOpacity: 0,
+          }}
+          title="Sign Up with Google"
+          type="google"
+      />
       </SafeAreaView>
       <StatusBar barStyle="light-content" />
     </View>
@@ -76,6 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderRadius: 10,
     padding: 12,
+    outlineColor: 'orange',
   },
   backImage: {
     width: "100%",
@@ -90,7 +125,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     backgroundColor: '#fff',
-    borderTopLeftRadius: 60,
   },
   form: {
     flex: 1,
