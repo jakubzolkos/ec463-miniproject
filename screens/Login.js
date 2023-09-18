@@ -1,8 +1,9 @@
 
-import React, { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
+import React, {useEffect, useState} from "react";
+import { StyleSheet, Text, View, TextInput, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth, database } from "../config/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 const backImage = require("../assets/backImage.png");
 import { SocialIcon } from 'react-native-elements'
 import * as Google from 'expo-auth-session/providers/google'
@@ -12,44 +13,74 @@ import {
     onAuthStateChanged,
     signInWithCredential
 } from 'firebase/auth'
+import {collection, getFirestore} from "firebase/firestore";
+import Logo from "../components/auth/Logo";
 
 WebBrowser.maybeCompleteAuthSession()
 
 
 export default function Login({ navigation }) {
-
+  const catImageUrl = "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
   // Google authentication
 
   const [userInfo, setUserInfo] = useState();
   const [request, response, promptAsync] = Google.useAuthRequest({
-      responseType: "id_token",
-      webClientId: "194340734719-f8itgbip10m9n67b1upsh1vt7bef3869.apps.googleusercontent.com",
-      iosClientId: "194340734719-3hvuk7trb57l1l8obsjvrfhfl2s4ll8t.apps.googleusercontent.com",
-      androidClientId: "194340734719-gvq5c6b1usetpb29ot31pvqlmpkj4l5d.apps.googleusercontent.com",
+    responseType: "id_token",
+    webClientId: "194340734719-f8itgbip10m9n67b1upsh1vt7bef3869.apps.googleusercontent.com",
+    iosClientId: "194340734719-3hvuk7trb57l1l8obsjvrfhfl2s4ll8t.apps.googleusercontent.com",
+    androidClientId: "194340734719-gvq5c6b1usetpb29ot31pvqlmpkj4l5d.apps.googleusercontent.com",
   });
 
-  React.useEffect(() => {
-      if (response?.type === "success") {
-          const { id_token } = response.params;
-          const credential = GoogleAuthProvider.credential(id_token);
-          signInWithCredential(auth, credential).then(r => {});
-          console.log(response.params)
-      }
-  }, [response])
+  useEffect(() => {
+    if (response?.type === "success") {
+      const { id_token } = response.params;
+      const credential = GoogleAuthProvider.credential(id_token);
+      signInWithCredential(auth, credential).then((userCredential) => {
+        const user = userCredential.user;
+        const usersRef = collection(database, "users");
+        const userQuery = doc(usersRef, user.email);
 
-  React.useEffect(() => {
-      const unsub = onAuthStateChanged(auth, async (user) => {
-          if (user) {
-            console.log(JSON.stringify(user, null, 2));
-            setUserInfo(user);
-          } else {
-              console.log("User not authorized");
-          }
+        getDoc(userQuery)
+          .then((docSnap) => {
+            if (docSnap.exists()) {
+              // User with this email already exists, do nothing
+              console.log("User already exists in the 'users' collection.");
+            } else {
+              const userData = {
+                username: user.displayName,
+                email: user.email,
+                uid: user.uid,
+                avatar: catImageUrl,
+              };
+
+              setDoc(userQuery, userData)
+                .then(() => {
+                  console.log("New user added to the 'users' collection.");
+                })
+                .catch((error) => {
+                  console.error("Error adding new user:", error);
+                });
+            }
+          })
+          .catch((error) => {
+            console.error("Error checking if user exists:", error);
+          });
       });
+    }
+  }, [response]);
 
-      return () => unsub();
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        console.log("User authenticated:", user);
+        setUserInfo(user);
+      } else {
+        console.log("User not authorized");
+      }
+    });
+
+    return () => unsub();
   }, []);
-
 
   // Standard authentication
 
@@ -64,14 +95,16 @@ export default function Login({ navigation }) {
     }
   };
   
-  return userInfo ? navigation.navigate("Home") :(
+  return userInfo ? navigation.navigate("Home") : (
     <View style={styles.container}>
       <View style={styles.whiteSheet} />
       <SafeAreaView style={styles.form}>
+        <Logo/>
         <Text style={styles.title}>Log In</Text>
          <TextInput
         style={styles.input}
-        placeholder="Enter email"
+        placeholder="Email Address"
+        placeholderTextColor="#AAAAAA"
         autoCapitalize="none"
         keyboardType="email-address"
         textContentType="emailAddress"
@@ -81,7 +114,8 @@ export default function Login({ navigation }) {
       />
       <TextInput
         style={styles.input}
-        placeholder="Enter password"
+        placeholder="Password"
+        placeholderTextColor="#AAAAAA"
         autoCapitalize="none"
         autoCorrect={false}
         secureTextEntry={true}
@@ -95,10 +129,17 @@ export default function Login({ navigation }) {
       <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center'}}>
         <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Don't have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-          <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Sign Up</Text>
+          <Text style={{color: '#7415da', fontWeight: '600', fontSize: 14}}> Sign Up</Text>
         </TouchableOpacity>
       </View>
-      <SocialIcon
+      <TouchableOpacity style={{
+        height: 58,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40,
+        }}>
+        <SocialIcon
           button
           fontStyle={{fontSize: 16, fontWeight: '600'}}
           iconStyle={{}}
@@ -111,9 +152,10 @@ export default function Login({ navigation }) {
               borderRadius: 10,
               shadowOpacity: 0,
           }}
-          title="Sign Up with Google"
+          title="Log In With Google"
           type="google"
-      />
+        />
+      </TouchableOpacity>
       </SafeAreaView>
       <StatusBar barStyle="light-content" />
     </View>
@@ -125,9 +167,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   title: {
-    fontSize: 36,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: "orange",
+    color: "#7415da",
     alignSelf: "center",
     paddingBottom: 24,
   },
@@ -138,7 +180,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderRadius: 10,
     padding: 12,
-    outlineColor: 'orange',
+    outlineColor: '#7415da',
   },
   backImage: {
     width: "100%",
@@ -160,7 +202,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   button: {
-    backgroundColor: '#f57c00',
+    backgroundColor: '#7415da',
     height: 58,
     borderRadius: 10,
     justifyContent: 'center',

@@ -29,18 +29,6 @@ import React, {
     };
 
     useLayoutEffect(() => {
-        navigation.setOptions({
-          headerRight: () => (
-            <TouchableOpacity
-              style={{
-                marginRight: 10
-              }}
-              onPress={onSignOut}
-            >
-              <AntDesign name="logout" size={24} color={colors.gray} style={{marginRight: 10}}/>
-            </TouchableOpacity>
-          )
-        });
       }, [navigation]);
 
     useLayoutEffect(() => {
@@ -67,7 +55,7 @@ import React, {
           GiftedChat.append(previousMessages, messages)
         );
         // setMessages([...messages, ...messages]);
-        const { _id, createdAt, text, user } = messages[0];    
+        const { _id, createdAt, text, user } = messages[0];
         addDoc(collection(database, 'chats'), {
           _id,
           createdAt,
@@ -79,7 +67,7 @@ import React, {
       return (
         <GiftedChat
           messages={messages}
-          showAvatarForEveryMessage={true}
+          showAvatarForEveryMessage={false}
           showUserAvatar={false}
           onSend={messages => onSend(messages)}
           messagesContainerStyle={{

@@ -3,8 +3,8 @@ import { ScrollView } from 'react-native';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import ConversationItem from './ConversationItem';
-import { database } from '../config/firebase';
-import {useNavigation} from "@react-navigation/native";
+import { auth, database } from '../config/firebase';
+import { useNavigation } from "@react-navigation/native";
 
 const Conversations = ({ searchPhrase }) => {
   const [users, setUsers] = useState([]);
@@ -48,7 +48,13 @@ const Conversations = ({ searchPhrase }) => {
         // Sort the unique data alphabetically by username
         const sortedData = uniqueData.sort((a, b) => a.username.localeCompare(b.username));
 
-        setUsers(sortedData);
+        // Get the UID of the currently logged-in user (Assuming you have access to it)
+        const loggedInUserUID = auth.currentUser.uid;
+
+        // Filter out the currently logged-in user
+        const filteredUsers = sortedData.filter(user => user.uid !== loggedInUserUID);
+
+        setUsers(filteredUsers);
       } catch (error) {
         console.error('Error querying Firestore: ', error);
       }
