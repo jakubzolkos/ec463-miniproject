@@ -9,7 +9,7 @@ const SearchInput = ({ setSearchPhrase }) => {
   // Function to handle text input changes
   const handleTextChange = (newText) => {
     setText(newText);
-    setSearchPhrase(newText); // Update the parent component's searchPhrase state
+    setSearchPhrase(newText);
   };
 
   return (
@@ -19,9 +19,8 @@ const SearchInput = ({ setSearchPhrase }) => {
         <TextInput
           style={styles.input}
           placeholder="Search"
-          maxLength={10}
-          onChangeText={handleTextChange} // Call handleTextChange when text changes
-          value={text} // Set the input value to the local state
+          onChangeText={handleTextChange}
+          value={text}
         />
       </View>
     </View>

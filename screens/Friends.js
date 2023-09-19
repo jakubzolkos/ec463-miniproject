@@ -8,6 +8,7 @@ import SearchInput from "../components/common/SearchInput";
 import Conversations from "../components/Conversations";
 import {signOut} from "firebase/auth";
 import {auth} from "../config/firebase";
+import UserSearch from "../components/UserSearch";
 const catImageUrl = "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
 
 const Home = () => {
@@ -18,15 +19,7 @@ const Home = () => {
     return (
         <View style={styles.container}>
             <SearchInput setSearchPhrase={setSearchPhrase} />
-            <Conversations searchPhrase={searchPhrase} />
-            <View style={styles.chatButtonContainer}>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate("Chat")}
-                    style={styles.chatButton}
-                >
-                    <Entypo name="chat" size={24} color={colors.lightGray} />
-                </TouchableOpacity>
-            </View>
+            <UserSearch searchPhrase={searchPhrase} />
         </View>
         );
     };

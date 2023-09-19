@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, Modal } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import ProfileInfo from './common/ProfileInfo';
 
 import { theme } from '../theme';
+import {auth, database} from "../config/firebase";
+import {doc, getDoc, serverTimestamp, setDoc, updateDoc} from "firebase/firestore";
+import {AuthContext} from "./auth/AuthContext";
 
-const ConversationItem = ({ picture, username, bio, lastMessage, time, isBlocked, isMuted, notification, hasStory }) => {
+const ConversationItem = ({ uid, picture, username, bio, lastMessage, time, isBlocked, isMuted, notification, hasStory, updateChatrooms }) => {
 
 	const [modalVisible, setModalVisible] = useState(false);
 	const navigation = useNavigation();
@@ -34,16 +37,63 @@ const ConversationItem = ({ picture, username, bio, lastMessage, time, isBlocked
 		}
 	};
 
+  const handleSelect = async () => {
+	  const currentUser = auth.currentUser;
+	  const combinedId =
+	  currentUser.uid > uid ? currentUser.uid + uid : uid + currentUser.uid;
+	  if (updateChatrooms) {
+		  try {
+			  // Check if the document exists in 'userChats' collection
+			  const userChatsDocRef = doc(database, 'userChats', currentUser.uid);
+			  const userChatsDocSnapshot = await getDoc(userChatsDocRef);
+
+			  if (!userChatsDocSnapshot.exists()) {
+				  // If it doesn't exist, create it with setDoc
+				  await setDoc(userChatsDocRef, {});
+			  }
+
+			  // Continue with the rest of your update logic
+			  await updateDoc(userChatsDocRef, {
+				  [combinedId + '.userInfo']: {
+					  uid: uid,
+					  username: username,
+					  avatar: picture,
+				  },
+				  [combinedId + '.date']: serverTimestamp(),
+			  });
+
+			  await updateDoc(doc(database, 'userChats', uid), {
+				  [combinedId + '.userInfo']: {
+					  uid: currentUser.uid,
+					  username: currentUser.displayName,
+					  avatar: currentUser.avatar,
+				  },
+				  [combinedId + '.date']: serverTimestamp(),
+			  });
+
+		  } catch (e) {
+			  navigation.navigate('Chat', {
+				  chatId: combinedId,
+				  username: username,
+				  bio: bio,
+				  picture: picture,
+			  });
+		  }
+	  }
+	  navigation.navigate('Chat', {
+		    chatId: combinedId,
+			username: username,
+		  	uid: uid,
+			bio: bio,
+			picture: picture,
+	  });
+  };
+
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity style={styles.conversation}
-			onPress={() => navigation.navigate('Chat', {
-				username: username,
-				bio: bio,
-				picture: picture,
-				isBlocked: isBlocked,
-				isMuted: isMuted
-			})}>
+				onPress={handleSelect}
+			>
 				<TouchableOpacity 
 					onPress={() => setModalVisible(currentValue => !currentValue)}
 					style={[styles.imageContainer, showStoryCircle()]}>

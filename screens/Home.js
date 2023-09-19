@@ -1,37 +1,59 @@
-import React, {useEffect, useLayoutEffect, useState} from "react";
-import { View, TouchableOpacity, Text, Image, StyleSheet } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import {View, StyleSheet, ScrollView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {AntDesign, FontAwesome, Ionicons} from '@expo/vector-icons';
-import colors from '../colors';
-import { Entypo } from '@expo/vector-icons';
 import SearchInput from "../components/common/SearchInput";
-import Conversations from "../components/Conversations";
-import {signOut} from "firebase/auth";
-import {auth} from "../config/firebase";
-const catImageUrl = "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
+import { auth, database } from "../config/firebase";
+import { doc, onSnapshot } from "firebase/firestore";
+import { ChatContext } from "../components/ChatContext";
+import ConversationItem from "../components/ConversationItem";
+const catImageUrl =
+  "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
 
 const Home = () => {
+  const navigation = useNavigation();
+  const [searchPhrase, setSearchPhrase] = useState("");
+  const [chats, setChats] = useState(null);
 
-    const navigation = useNavigation();
-    const [searchPhrase, setSearchPhrase] = useState("");
+  useEffect(() => {
+    const getChats = () => {
+      const unsub = onSnapshot(
+        doc(database, "userChats", auth.currentUser.uid),
+        (doc) => {
+          setChats(doc.data());
+          console.log(doc.data())
+        }
+      );
 
-    return (
-        <View style={styles.container}>
-            <SearchInput setSearchPhrase={setSearchPhrase} />
-            <Conversations searchPhrase={searchPhrase} />
-            <View style={styles.chatButtonContainer}>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate("Chat")}
-                    style={styles.chatButton}
-                >
-                    <Entypo name="chat" size={24} color={colors.lightGray} />
-                </TouchableOpacity>
-            </View>
-        </View>
-        );
+      return () => {
+        unsub();
+      };
     };
 
-    export default Home;
+    if (auth.currentUser.uid) {
+      getChats();
+    }
+  }, [auth.currentUser.uid]);
+
+  return (
+    <View style={styles.container}>
+      <SearchInput setSearchPhrase={setSearchPhrase} />
+        <ScrollView>
+          {chats &&
+            Object.entries(chats)
+              .sort(([, a], [, b]) => b.date - a.date) // Destructure the objects properly
+              .map(([chatId, chatData]) => (
+                <ConversationItem
+                  key={chatId}
+                  username={chatData.userInfo.username}
+                  picture={chatData.userInfo.avatar}
+                />
+              ))}
+        </ScrollView>
+    </View>
+  );
+};
+
+export default Home;
 
     const styles = StyleSheet.create({
         container: {

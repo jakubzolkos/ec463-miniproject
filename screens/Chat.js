@@ -3,7 +3,6 @@ import React, {
     useLayoutEffect,
     useCallback
   } from 'react';
-  import { TouchableOpacity, Text } from 'react-native';
   import { GiftedChat } from 'react-native-gifted-chat';
   import {
     collection,
@@ -14,15 +13,15 @@ import React, {
   } from 'firebase/firestore';
   import { signOut } from 'firebase/auth';
   import { auth, database } from '../config/firebase';
-  import { useNavigation } from '@react-navigation/native';
-  import { AntDesign } from '@expo/vector-icons';
-  import colors from '../colors';
+  import { useRoute } from '@react-navigation/native';
+import Input from "../components/Input";
 
 
-  export default function Chat() {
+  export default function Chat({navigation}) {
 
     const [messages, setMessages] = useState([]);
-    const navigation = useNavigation();
+    const route = useRoute();
+    const { chatId, username, uid, bio, picture } = route.params;
 
     const onSignOut = () => {
       signOut(auth).catch(error => console.log('Error logging out: ', error));
@@ -37,16 +36,15 @@ import React, {
     const q = query(collectionRef, orderBy('createdAt', 'desc'));
 
     const unsubscribe = onSnapshot(q, querySnapshot => {
-        console.log('querySnapshot unsusbscribe');
-          setMessages(
-            querySnapshot.docs.map(doc => ({
-              _id: doc.data()._id,
-              createdAt: doc.data().createdAt.toDate(),
-              text: doc.data().text,
-              user: doc.data().user
-            }))
-          );
-        });
+      setMessages(
+        querySnapshot.docs.map(doc => ({
+          _id: doc.data()._id,
+          createdAt: doc.data().createdAt.toDate(),
+          text: doc.data().text,
+          user: doc.data().user
+        }))
+      );
+    });
     return unsubscribe;
       }, []);
 
@@ -82,5 +80,6 @@ import React, {
             avatar: 'https://i.pravatar.cc/300'
           }}
         />
+        // <Input chatId={chatId} uid={uid}/>
       );
 }
