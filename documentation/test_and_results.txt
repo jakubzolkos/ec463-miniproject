@@ -1,0 +1,7 @@
+Sept 11 - created login
+Sept 12 - added Google login and tested: passed and added to database
+Sept 14 - added users list and log out
+Sept 15 - tested users list and log out
+Sept 16 - added search feature and tested: passed and searches by username and email
+Sept 18 - added chat and tested: users can chat with each other
+Sept 19 - tested on web app: passed and app is fully functional
